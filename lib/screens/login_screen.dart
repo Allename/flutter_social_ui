@@ -16,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               Image(
                 height: MediaQuery.of(context).size.height / 2.5,
+                width: double.infinity,
                 image: AssetImage('assets/images/login_background.jpg'),
                 fit: BoxFit.cover,
               ),
