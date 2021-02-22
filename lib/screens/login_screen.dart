@@ -20,6 +20,47 @@ class _LoginScreenState extends State<LoginScreen> {
                 image: AssetImage('assets/images/login_background.jpg'),
                 fit: BoxFit.cover,
               ),
+              Text(
+                'FRENZY',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 34.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.0,
+                ),
+              ),
+              SizedBox(height: 10.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+                    fillColor: Colors.white,
+                    filled: true,
+                    hintText: 'Username',
+                    prefixIcon: Icon(
+                      Icons.account_box,
+                      size: 30.0,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 15.0),
+                    fillColor: Colors.white,
+                    filled: true,
+                    hintText: 'Password',
+                    prefixIcon: Icon(
+                      Icons.lock,
+                      size: 30.0,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
