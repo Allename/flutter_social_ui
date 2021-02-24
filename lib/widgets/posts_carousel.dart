@@ -58,6 +58,7 @@ class PostsCarousel extends StatelessWidget {
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   post.location,
@@ -65,7 +66,9 @@ class PostsCarousel extends StatelessWidget {
                     fontSize: 18.0,
                     fontWeight: FontWeight.w600,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
+                SizedBox(height: 6.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -75,7 +78,13 @@ class PostsCarousel extends StatelessWidget {
                           Icons.favorite,
                           color: Colors.red,
                         ),
-                        Text(post.likes.toString()),
+                        SizedBox(width: 6.0),
+                        Text(
+                          post.likes.toString(),
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
                       ],
                     ),
                     Row(
@@ -84,7 +93,13 @@ class PostsCarousel extends StatelessWidget {
                           Icons.comment,
                           color: Theme.of(context).primaryColor,
                         ),
-                        Text(post.comments.toString()),
+                        SizedBox(width: 6.0),
+                        Text(
+                          post.comments.toString(),
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
                       ],
                     ),
                   ],
