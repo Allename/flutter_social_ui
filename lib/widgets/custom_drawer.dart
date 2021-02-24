@@ -19,8 +19,35 @@ class CustomDrawer extends StatelessWidget {
                 bottom: 20.0,
                 left: 20.0,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    
+                    Container(
+                      height: 100.0,
+                      width: 100.0,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          width: 3.0,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                      child: ClipOval(
+                        child: Image(
+                          image: AssetImage(currentUser.profileImageUrl),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 6.0),
+                    Text(
+                      currentUser.name,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
+                    ),
                   ],
                 ),
               ),
