@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_social_ui/data/data.dart';
 
 class CustomDrawer extends StatelessWidget {
+  _buildDrawerOption(Icon icon, String title, Function onTap) {
+    return ListTile(
+      leading: icon,
+      title: Text(
+        title,
+        style: TextStyle(
+          fontSize: 20.0,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
