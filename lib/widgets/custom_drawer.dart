@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_ui/data/data.dart';
+import 'package:flutter_social_ui/screens/home_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   _buildDrawerOption(Icon icon, String title, Function onTap) {
@@ -11,6 +12,7 @@ class CustomDrawer extends StatelessWidget {
           fontSize: 20.0,
         ),
       ),
+      onTap: onTap,
     );
   }
 
@@ -65,6 +67,19 @@ class CustomDrawer extends StatelessWidget {
               ),
             ],
           ),
+          _buildDrawerOption(
+            Icon(Icons.dashboard),
+            'Home',
+            () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (_) => HomeScreen(),
+              ),
+            ),
+          ),
+          _buildDrawerOption(Icon(Icons.chat), 'Chat', () {}),
+          _buildDrawerOption(Icon(Icons.location_on), 'Map', () {}),
+          _buildDrawerOption(Icon(Icons.account_circle), 'Your Profile', () {}),
         ],
       ),
     );
