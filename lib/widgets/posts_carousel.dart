@@ -15,7 +15,6 @@ class PostsCarousel extends StatelessWidget {
         Container(
           margin: EdgeInsets.all(10.0),
           decoration: BoxDecoration(
-            color: Colors.red,
             borderRadius: BorderRadius.circular(15.0),
             boxShadow: [
               BoxShadow(
@@ -32,6 +31,65 @@ class PostsCarousel extends StatelessWidget {
               width: 300.0,
               image: AssetImage(post.imageUrl),
               fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Positioned(
+          left: 10.0,
+          bottom: 10.0,
+          right: 10.0,
+          child: Container(
+            padding: EdgeInsets.all(12.0),
+            height: 110.0,
+            decoration: BoxDecoration(
+              color: Colors.white54,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15.0),
+                bottomRight: Radius.circular(15.0),
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  post.title,
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  post.location,
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        ),
+                        Text(post.likes.toString()),
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.comment,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        Text(post.comments.toString()),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
