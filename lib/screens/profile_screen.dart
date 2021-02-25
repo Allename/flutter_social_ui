@@ -46,7 +46,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 Positioned(
-                  bottom: 0.0,
+                  bottom: 10.0,
                   child: Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
@@ -67,6 +67,60 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Text(
+                widget.user.name,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'Following',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 22.0,
+                      ),
+                    ),
+                    SizedBox(height: 2.0),
+                    Text(
+                      widget.user.following.toString(),
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'Followers',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 22.0,
+                      ),
+                    ),
+                    SizedBox(height: 2.0),
+                    Text(
+                      widget.user.followers.toString(),
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
